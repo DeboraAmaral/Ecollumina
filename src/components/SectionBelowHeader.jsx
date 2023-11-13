@@ -18,7 +18,7 @@ const SectionBelowHeader = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
         <button className="green-button">
-            Entrar agora
+              <h6 style={{fontSize: '14px', position: 'relative', left: '18px'}}>Entrar agora</h6>
           <div className="arrow-box">
             <img src={SETAD} alt="Seta" style={{display: 'flex', }}/>
           </div>
