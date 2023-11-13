@@ -1,8 +1,8 @@
 import React from 'react';
-import './CreateAccountModal.scss'; 
-import Logo from '../LOGO.svg'; 
-import GoogleLogo from '../GOOGLE.svg'; 
-import FacebookLogo from '../FACEBOOK.svg'; 
+import './CreateAccountModal.scss';
+import Logo from '../LOGOBRANCA.svg';
+import GoogleLogo from '../GOOGLE.svg';
+import FacebookLogo from '../FACEBOOK.svg';
 import FUNDOC from '../FUNDOC.svg';
 
 const CreateAccountModal = () => {

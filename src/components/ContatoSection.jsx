@@ -3,6 +3,7 @@ import './ContatoSection.scss';
 
 const ContatoSection = () => {
   return (
+    <section id='contato'>
     <div className="contato-section">
       <div className="square-container">
         <div className="text-container">
@@ -12,6 +13,7 @@ const ContatoSection = () => {
         <button className="contato-button">Contato</button>
       </div>
     </div>
+    </section>
   );
 };
 

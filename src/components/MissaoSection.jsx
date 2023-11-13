@@ -3,6 +3,7 @@ import './MissaoSection.scss';
 
 const MissaoSection = () => {
   return (
+    <section id='missao'>
     <div className="missao-section">
       <div className="background-image"></div>
 
@@ -15,6 +16,7 @@ const MissaoSection = () => {
         </p>
       </div>
     </div>
+    </section>
   );
 };
 

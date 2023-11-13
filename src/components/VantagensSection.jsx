@@ -7,6 +7,7 @@ import EMOJI from '../EMOJI.svg';
 
 const VantagensSection = () => {
   return (
+    <section id='vantagens'>
     <div className="vantagens-section">
       <div className="text-container">
         <div className="category">VANTAGENS</div>
@@ -64,6 +65,7 @@ const VantagensSection = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
