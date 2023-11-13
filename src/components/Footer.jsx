@@ -1,6 +1,6 @@
 import React from 'react';
-import './Footer.scss'; // Certifique-se de importar o arquivo de estilo
-import Logo from '../LOGO.svg'; // Substitua pelo caminho correto da sua logo
+import './Footer.scss'; 
+import Logo from '../LOGO.svg'; 
 import Rede1 from '../Social1.svg';
 import Rede2 from '../Social2.svg';
 import Rede3 from '../Social3.svg';
@@ -19,7 +19,6 @@ const Footer = () => {
         <a href="#">Trabalhe Conosco</a>
       </div>
       <div className="right">
-        {/* Adicione os caminhos corretos para as suas imagens */}
         <img src={Rede1} alt="Logo 1" />
         <img src={Rede2} alt="Logo 2" />
         <img src={Rede3} alt="Logo 3" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import './VantagensSection.scss'; // Certifique-se de importar o arquivo de estilo
+import './VantagensSection.scss'; 
 import SETTINGS from '../SETTINGS.svg';
 import DASH from '../DASH.svg';
 import LIGHT from '../LIGHT.svg';
@@ -14,10 +14,8 @@ const VantagensSection = () => {
       </div>
 
       <div className="content">
-        {/* Quadrado e imagem 1 */}
         <div className="item">
           <div className="square">
-            {/* Adicione o caminho da imagem como src */}
             <img src={EMOJI} alt="Vantagem 1" />
           </div>
           <p>
@@ -28,10 +26,8 @@ const VantagensSection = () => {
           </p>
         </div>
 
-        {/* Quadrado e imagem 2 */}
         <div className="item">
           <div className="square">
-            {/* Adicione o caminho da imagem como src */}
             <img src={SETTINGS} alt="Vantagem 2" />
           </div>
           <p>
@@ -42,10 +38,8 @@ const VantagensSection = () => {
           </p>
         </div>
 
-        {/* Quadrado e imagem 3 */}
         <div className="item">
           <div className="square">
-            {/* Adicione o caminho da imagem como src */}
             <img src={DASH} alt="Vantagem 3" />
           </div>
           <p>
@@ -56,10 +50,8 @@ const VantagensSection = () => {
           </p>
         </div>
 
-        {/* Quadrado e imagem 4 */}
         <div className="item">
           <div className="square">
-            {/* Adicione o caminho da imagem como src */}
             <img src={LIGHT} alt="Vantagem 4" />
           </div>
           <p>

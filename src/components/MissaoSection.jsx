@@ -1,10 +1,9 @@
 import React from 'react';
-import './MissaoSection.scss'; // Certifique-se de importar o arquivo de estilo
+import './MissaoSection.scss'; 
 
 const MissaoSection = () => {
   return (
     <div className="missao-section">
-      {/* Adicione o caminho da imagem como background-image */}
       <div className="background-image"></div>
 
       <div className="text-container">

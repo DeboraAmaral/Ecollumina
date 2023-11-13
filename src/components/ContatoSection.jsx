@@ -1,5 +1,5 @@
 import React from 'react';
-import './ContatoSection.scss'; // Certifique-se de importar o arquivo de estilo
+import './ContatoSection.scss'; 
 
 const ContatoSection = () => {
   return (
