@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import CreateAccountModal from './components/CreateAccountModal';
 import LoginSection from './components/LoginSection';
 
+
+// MAIN ATUALIZADA
 function App() {
   const [showCreateAccountModal, setShowCreateAccountModal] = useState(false);
   const [showLoginSection, setShowLoginSection] = useState(false);
