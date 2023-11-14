@@ -6,7 +6,11 @@ import FOTO2 from '../FOTO2.svg';
 import FOTO3 from '../FOTO3.svg';
 import FOTO4 from '../FOTO4.svg';
 
-const SectionBelowHeader = () => {
+const SectionBelowHeader = ({ onShowLogin }) => {
+  const handleEntrarAgoraClick = () => {
+    onShowLogin();
+  };
+
   return (
     <section className="section-below-header">
       <div className="text-container">
@@ -17,8 +21,8 @@ const SectionBelowHeader = () => {
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-        <button className="green-button">
-              <h6 style={{fontSize: '14px', position: 'relative', left: '18px'}}>Entrar agora</h6>
+        <button className="green-button" onClick={handleEntrarAgoraClick}>
+          <h6 style={{fontSize: '14px', position: 'relative', left: '18px'}}>Entrar agora</h6>
           <div className="arrow-box">
             <img src={SETAD} alt="Seta" style={{display: 'flex', }}/>
           </div>

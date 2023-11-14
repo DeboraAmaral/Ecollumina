@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import SectionBelowHeader from './components/SectionBelowHeader';
@@ -9,41 +9,43 @@ import ContatoSection from './components/ContatoSection';
 import Footer from './components/Footer';
 import CreateAccountModal from './components/CreateAccountModal';
 import LoginSection from './components/LoginSection';
+import { AuthProvider } from './AuthContext';
+import { useState } from 'react';
 
 
-// MAIN ATUALIZADA
 function App() {
   const [showCreateAccountModal, setShowCreateAccountModal] = useState(false);
   const [showLoginSection, setShowLoginSection] = useState(false);
 
-  const openCreateAccount = () => {
+  const handleShowCreateAccount = () => {
     setShowCreateAccountModal(true);
     setShowLoginSection(false); 
   };
 
-  const openLogin = () => {
+  const handleShowLogin = () => {
     setShowLoginSection(true);
     setShowCreateAccountModal(false); 
   };
 
-  const closeModals = () => {
+  const handleCloseModals = () => {
     setShowCreateAccountModal(false);
     setShowLoginSection(false);
   };
 
   return (
     <Router>
+      <AuthProvider>
       <div className="App">
         <Header 
-          onShowCreateAccount={openCreateAccount} 
-          onShowLogin={openLogin} 
+          onShowCreateAccount={handleShowCreateAccount} 
+          onShowLogin={handleShowLogin} 
         />
 
-        {showCreateAccountModal && <CreateAccountModal onClose={closeModals} />}
-        {showLoginSection && <LoginSection onClose={closeModals} />}
+        {showCreateAccountModal && <CreateAccountModal onClose={handleCloseModals} />}
+        {showLoginSection && <LoginSection onClose={handleCloseModals} />}
 
         <Routes>
-          <Route path="/" element={<SectionBelowHeader />} />
+          <Route path="/" element={<SectionBelowHeader onShowLogin={() => setShowLoginSection(true)} />} />
           <Route path="/#produtos" element={<ProductSection />} />
           <Route path="/#vantagens" element={<VantagensSection />} />
           <Route path="/#missao" element={<MissaoSection />} />
@@ -56,6 +58,7 @@ function App() {
         <ContatoSection />
         <Footer />
       </div>
+      </AuthProvider>
     </Router>
   );
 }
