@@ -34,11 +34,10 @@ const Header = ({ onShowCreateAccount, onShowLogin }) => {
         </div>
 
         <div className="nav-links">
-          <Link to="/#produtos">Produtos</Link>
-          <Link to="/#vantagens">Vantagens</Link>
-          <Link to="/#missao">Missão</Link>
-          <Link to="/#sobre-nos">Sobre nós</Link>
-          <Link to="/#contato">Contato</Link>
+          <a href="#produtos">Produtos</a>
+          <a href="#vantagens">Vantagens</a>
+          <a href="#missao">Missão</a>
+          <a href="#contato">Contato</a>
         </div>
 
         <div className="user-section">
@@ -46,7 +45,7 @@ const Header = ({ onShowCreateAccount, onShowLogin }) => {
             <>
               <div className="user-info" onClick={handleToggleOptionsPanel}>
                 <p style={{ fontFamily: 'Arial', fontWeight: 'bold', marginRight: '8px', marginTop: '20px' }}>{user.apelido}</p>
-                <span style={{ fontSize: '12px', cursor: 'pointer', position: 'relative', fontWeight: 'bold', top: '-47px', left: '57px'}}>v</span>
+                <span style={{ fontSize: '12px', cursor: 'pointer', position: 'relative', fontWeight: 'bold', top: '-47px', left: '57px' }}>v</span>
               </div>
               {showOptionsPanel && <UserOptionsPanel onClose={handleCloseOptionsPanel} onShowDashboard={handleShowDashboardModal} />}
             </>

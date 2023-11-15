@@ -4,7 +4,7 @@ import SOLAR from '../SOLAR1.svg';
 
 const ProductSection = () => {
   return (
-    <section id='#produtos'>
+    <section id='produtos'>
     <div className="product-section">
       <div className="container">
         <div className="content">

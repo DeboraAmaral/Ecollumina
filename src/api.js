@@ -1,6 +1,6 @@
 const getTemperature = async () => {
     const apiKey = '8e8dc329825596280b1ab6282c5ed095';
-    const city = 'Petrolina';
+    const city = 'Manaus';
   
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
