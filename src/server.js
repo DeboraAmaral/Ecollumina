@@ -52,7 +52,6 @@ app.post('/create-account', async (req, res) => {
 
   
 
-  // Verifique se o email já está em uso
   db.query('SELECT * FROM usuarios WHERE email = ?', [email], async (err, result) => {
     if (err) {
       console.error('Erro ao consultar o banco de dados:', err);

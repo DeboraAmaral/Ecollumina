@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Header.scss';
 import Logo from '../LOGO.svg';
 import { useAuth } from '../AuthContext.js';
 import UserOptionsPanel from '../UserOptionsPanel';
+import DashboardModal from './DashboardModal.jsx';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onShowCreateAccount, onShowLogin }) => {
   const { user, logout } = useAuth();
   const [showOptionsPanel, setShowOptionsPanel] = useState(false);
+  const [showDashboardModal, setShowDashboardModal] = useState(false);
 
   const handleToggleOptionsPanel = () => {
     setShowOptionsPanel(!showOptionsPanel);
@@ -17,6 +19,13 @@ const Header = ({ onShowCreateAccount, onShowLogin }) => {
     setShowOptionsPanel(false);
   };
 
+  const handleShowDashboardModal = () => {
+    setShowDashboardModal(true);
+  };
+
+  const handleCloseDashboardModal = () => {
+    setShowDashboardModal(false);
+  };
   return (
     <header className="custom-header">
       <div className="container">
@@ -35,11 +44,11 @@ const Header = ({ onShowCreateAccount, onShowLogin }) => {
         <div className="user-section">
           {user ? (
             <>
-              <div style={{marginTop: '25px'}} className="user-info" onClick={handleToggleOptionsPanel}>
+              <div className="user-info" onClick={handleToggleOptionsPanel}>
                 <p style={{ fontFamily: 'Arial', fontWeight: 'bold', marginRight: '8px', marginTop: '20px' }}>{user.apelido}</p>
                 <span style={{ fontSize: '12px', cursor: 'pointer', position: 'relative', fontWeight: 'bold', top: '-47px', left: '57px'}}>v</span>
               </div>
-              {showOptionsPanel && <UserOptionsPanel onClose={handleCloseOptionsPanel} />}
+              {showOptionsPanel && <UserOptionsPanel onClose={handleCloseOptionsPanel} onShowDashboard={handleShowDashboardModal} />}
             </>
           ) : (
             <>
@@ -49,6 +58,7 @@ const Header = ({ onShowCreateAccount, onShowLogin }) => {
           )}
         </div>
       </div>
+      {showDashboardModal && <DashboardModal onClose={handleCloseDashboardModal} />}
     </header>
   );
 };

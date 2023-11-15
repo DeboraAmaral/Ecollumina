@@ -5,8 +5,11 @@ import FOTO1 from '../FOTO1.svg';
 import FOTO2 from '../FOTO2.svg';
 import FOTO3 from '../FOTO3.svg';
 import FOTO4 from '../FOTO4.svg';
+import { useAuth } from '../AuthContext';
 
 const SectionBelowHeader = ({ onShowLogin }) => {
+  const { user } = useAuth();
+
   const handleEntrarAgoraClick = () => {
     onShowLogin();
   };
@@ -21,12 +24,14 @@ const SectionBelowHeader = ({ onShowLogin }) => {
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
-        <button className="green-button" onClick={handleEntrarAgoraClick}>
-          <h6 style={{fontSize: '14px', position: 'relative', left: '18px'}}>Entrar agora</h6>
-          <div className="arrow-box">
-            <img src={SETAD} alt="Seta" style={{display: 'flex', }}/>
-          </div>
-        </button>
+        {!user && (
+          <button className="green-button" onClick={handleEntrarAgoraClick}>
+            <h6 style={{fontSize: '14px', position: 'relative', left: '18px'}}>Entrar agora</h6>
+            <div className="arrow-box">
+              <img src={SETAD} alt="Seta" style={{display: 'flex'}}/>
+            </div>
+          </button>
+        )}
       </div>
       <div className="images-container">
         <img className="img1" src={FOTO3} alt="Imagem 1" />
